@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <% Book.forEach((book) => { %>
+         <li>
+            <%=book.name%> - <%=book.author%> <br />
+           Published: <%=book.publicationYear%>  - Genre: <%=book.publicationYear%> <br />
+           Description: <br /> 
+           <%=book.description%>
+         </li>
+        <% }) %>
+    </ul>    
+</body>
+</html>

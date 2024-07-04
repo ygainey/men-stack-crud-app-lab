@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create a New Book!</h1>
+    <form action="/books" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" />
+        </div>
+        <div>
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" />
+        </div>
+        <div>
+            <label for="publicationYear">Year of Publication:</label>
+            <input type="text" name="publicationYear" id="publicationYear" />
+        </div>
+        <div>
+            <label for="genre">Genre:</label>
+            <input type="text" name="genre" id="genre" />
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" />
+        </div>
+  
+      <button type="submit">Add Book</button>
+    </form>
+  </body>
+  
+</html>
