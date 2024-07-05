@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+.container{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: auto;
+}
+.showContainer{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: auto;    
+}
+.indexContainer{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: auto;     
+}
+.input{
+    display: flex;
+    justify-content: space-between;
+}
+.submit{
+    display: flex;
+    align-items: center;
+}

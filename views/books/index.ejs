@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-    <h1>Book List</h1>
-    <ul>
-        <% Book.forEach((book) => { %>
-         <a href="/books/<%=book._id%>"><li>
-            <%=book.name%> 
-         </li></a>
-         <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
-            <button type="submit">Delete <%= book.name %></button>
-          </form>
-        <% }) %>
-    </ul> 
-    <a href="/books/new">Add New Fruit</a>   
+    <div class="indexContainer">
+      <h1>Book List</h1>
+      <ul>
+          <% Book.forEach((book) => { %>
+          <a href="/books/<%=book._id%>"><li>
+              <%=book.name%> 
+          </li></a>
+          
+          <% }) %>
+      </ul> 
+      <a href="/books/new">Add New Fruit</a>
+    </div>
 </body>
 </html>

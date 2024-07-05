@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-    <h1><%= Book.name%></h1>
-    <h2><%= Book.author%></h2>
-    <h3>Published : <%= Book.publicationYear%></h3>
-    <p>Genre : <%= Book.genre%></p>
-    <p><%= Book.description%></p>
-    
-    <a href="/books">Back to index</a>
+    <div class="showContainer">
+        <h1><%= Book.name%></h1>
+        <h2><%= Book.author%></h2>
+        <h3>Published : <%= Book.publicationYear%></h3>
+        <p>Genre : <%= Book.genre%></p>
+        <p><%= Book.description%></p>
+        
+        <form action="/books/<%=Book._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete <%= Book.name %></button>
+        </form>
+        <a href="/books/<%= Book._id %>/edit">Edit <%= Book.name %></a>
+        <br />
+        <br />
+        <a href="/books">Back to index</a>
+    </div>
 </body>
 </html>

@@ -8,34 +8,30 @@
 </head>
 <body>
     <div class="container">
-        <h1>Create a New Book!</h1>
-        <form action="/books" method="POST">
+        <h1>Edit <%= Book.name %> details</h1>
+        <form action="/books/<%=Book._id%>?_method=PUT" method="POST">
             <div class="input">
                 <label for="name">Name:</label>
-                <input type="text" name="name" id="name" />
+                <input type="text" name="name" id="name" value="<%= Book.name  %>" />
             </div>
             <div class="input">
                 <label for="author">Author:</label>
-                <input type="text" name="author" id="author" />
+                <input type="text" name="author" id="author" value="<%= Book.author %>"/>
             </div>
             <div class="input">
                 <label for="publicationYear">Year of Publication:</label>
-                <input type="text" name="publicationYear" id="publicationYear" />
+                <input type="text" name="publicationYear" id="publicationYear" value="<%= Book.publicationYear  %>" />
             </div>
             <div class="input">
                 <label for="genre">Genre:</label>
-                <input type="text" name="genre" id="genre" />
+                <input type="text" name="genre" id="genre" value="<%= Book.genre %>"/>
             </div>
             <div class="input">
                 <label for="description">Description:</label>
-                <input type="text" name="description" id="description" />
+                <input type="text" name="description" id="description" value="<%= Book.description %>" />
             </div>
-            <div class="submit">
-                <button type="submit">Add Book</button>
-            </div>        
-        </form>
-        <a href="/books">Back to Books</a>
-    </div>
+            <button type="submit">Update Details</button>
+        </form> 
+    </div> 
 </body>
-  
 </html>
