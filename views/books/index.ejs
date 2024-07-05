@@ -6,15 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Book List</h1>
     <ul>
         <% Book.forEach((book) => { %>
          <li>
             <%=book.name%> - <%=book.author%> <br />
-           Published: <%=book.publicationYear%>  - Genre: <%=book.publicationYear%> <br />
+           Published: <%=book.publicationYear%>  - Genre: <%=book.genre%> <br />
            Description: <br /> 
            <%=book.description%>
          </li>
+         <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete <%= book.name %></button>
+          </form>
         <% }) %>
-    </ul>    
+    </ul> 
+    <a href="/books/new">Add New Fruit</a>   
 </body>
 </html>

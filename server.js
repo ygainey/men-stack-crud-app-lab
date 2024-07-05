@@ -3,7 +3,8 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const mongoose = require('mongoose');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const methodOverride = require("method-override");
 
 dotenv.config();
 
@@ -14,10 +15,9 @@ const Book = require('./models/book.js')
 
 const app = express()
 
-
 app.use(express.urlencoded({ extended: false }));
-//middleware
-app.use(morgan('dev'))
+app.use(methodOverride("_method")); 
+app.use(morgan("dev"));
 
 //routes
 app.get('/', async (req, res) => {
@@ -37,6 +37,11 @@ app.get('/books/new', async (req, res) =>{
 app.post('/books', async (req, res) =>{
     const createdBook = await Book.create(req.body)
     res.redirect('/books/new')
+})
+
+app.delete('/books/:bookID', async (req, res) =>{
+    await Book.findByIdAndDelete(req.params.bookID)
+    res.redirect('/books')
 })
 
 //server connect
