@@ -34,6 +34,12 @@ app.get('/books/new', async (req, res) =>{
     res.render('./books/new.ejs')
 })
 
+app.get('/books/:bookID', async (req, res) =>{
+    const bookID = req.params.bookID
+    const foundBook = await Book.findById(bookID)
+    res.render('./books/show.ejs', {Book : foundBook})
+})
+
 app.post('/books', async (req, res) =>{
     const createdBook = await Book.create(req.body)
     res.redirect('/books/new')

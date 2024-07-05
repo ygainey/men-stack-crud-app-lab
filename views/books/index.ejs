@@ -9,12 +9,9 @@
     <h1>Book List</h1>
     <ul>
         <% Book.forEach((book) => { %>
-         <li>
-            <%=book.name%> - <%=book.author%> <br />
-           Published: <%=book.publicationYear%>  - Genre: <%=book.genre%> <br />
-           Description: <br /> 
-           <%=book.description%>
-         </li>
+         <a href="/books/<%=book._id%>"><li>
+            <%=book.name%> 
+         </li></a>
          <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
             <button type="submit">Delete <%= book.name %></button>
           </form>
